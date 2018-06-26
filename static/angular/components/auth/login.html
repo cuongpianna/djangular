@@ -1,0 +1,28 @@
+<div class="container-fluid" style="background-color: #f5f5f5; height: 100vh">
+            <div class="row">
+                <h1 class="col-md-4 col-md-offset-4">Login</h1>
+            </div>
+
+            <form class="row">
+                <div class="col-md-4 col-md-offset-4" style="margin-bottom: 25px">
+                    <input type="text" class="form-control" placeholder="Email" ng-model="user.username">
+                    <input type="password" class="form-control" placeholder="Mật khẩu" ng-model="user.password">
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    <button class="btn btn-success form-control" ng-click="login()">Đăng nhập ngay</button>
+                </div>
+                <h3 class="text-center col-md-offset-4 col-md-4">hoặc</h3>
+                <div class="col-md-4 col-md-offset-4">
+                    <button class="btn btn-primary form-control" style="margin-bottom: 10px">Đăng nhập bằng facebook</button>
+                    <button class="btn btn-danger form-control">Đăng nhập bằng google</button>
+                </div>
+
+                <div class="col-md-4 col-md-offset-4">
+                    <h5 class="text-center">Bạn quên mật khẩu</h5>
+                </div>
+
+                <div class="col-md-4 col-md-offset-4">
+                    <a class="btn btn-default form-control" ui-sref="register">Bạn chưa có tài khoản?</a>
+                </div>
+            </form>
+        </div>
