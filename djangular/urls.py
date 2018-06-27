@@ -28,7 +28,10 @@ urlpatterns = [
     path('login',obtain_jwt_token),
     path('register/',csrf_exempt(views.UserRegisterView.as_view())),
     path('',views.index,name='index'),
-    path('o/',include('oauth2_provider.urls',namespace='oauth2_provider'))
+    #path('o/',include('oauth2_provider.urls',namespace='oauth2_provider')),
+    #path('auth/',include('rest_framework_social_oauth2.urls')),
+    path('oauth/', include('social_django.urls', namespace='social')),
+    path('api/',include('books.urls')),
 ]
 
 # if settings.DEBUG:
