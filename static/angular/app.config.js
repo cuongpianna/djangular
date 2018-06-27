@@ -1,4 +1,4 @@
-app.config(function ($stateProvider,$urlRouterProvider) {
+app.config(function ($stateProvider,$urlRouterProvider,$httpProvider) {
     $urlRouterProvider.otherwise('')
 
     $stateProvider
@@ -12,6 +12,9 @@ app.config(function ($stateProvider,$urlRouterProvider) {
             controller: 'authController',
             templateUrl: 'static/angular/components/auth/register.html'
         })
+        $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
 
     
 })

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework_jwt.views import obtain_jwt_token
 from users import views
 
@@ -25,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include('users.urls')),
     path('login',obtain_jwt_token),
+    path('register/',csrf_exempt(views.UserRegisterView.as_view())),
     path('',views.index,name='index'),
 ]
 

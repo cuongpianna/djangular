@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.error{
+    display: inline-block;
+    color: red;
+    padding-left: 10px;
+}

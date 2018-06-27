@@ -7,7 +7,7 @@
         <div class="col-md-4 col-md-offset-4">
             <button class="btn btn-primary form-control">Đăng nhập qua facebook</button>
         </div>
-        <form class="col-md-4 col-md-offset-4">
+        <form class="col-md-4 col-md-offset-4" name="form">
             <div class="row">
                 <div class="col-md-4">
                     <hr>
@@ -23,19 +23,23 @@
                 <div class="col-md-12">
                     <!--row1-->
                     <div class="row" style="margin-top: 10px">
-                        <input type="text" class="form-control" placeholder="Tài khoản">
+                        <input type="text" class="form-control" placeholder="Tài khoản"  name="username" ng-model="u.username">
+                        <span ng-show="form.username.$invalid" class="error">Không được trống trường này</span>
                     </div>
 
                     <div class="row" style="margin-top: 10px">
-                        <input type="text" class="form-control" placeholder="Email của bạn">
+                        <input type="text" class="form-control" placeholder="Email của bạn" name="email"  ng-model="u.email">
+                        <span ng-show="form.email.$dirty" class="error">Email chưa đúng định dạng</span>
                     </div>
 
                     <div class="row" style="margin-top: 10px">
                         <div class="col-md-6" style="padding-left: 0">
-                            <input type="password" class="form-control" placeholder="Mật khẩu">
+                            <input type="password" class="form-control" placeholder="Mật khẩu"  name="password"  ng-model="u.password">
+                            <span ng-show="form.password.$error.required" class="error">Không được trống trường này</span>
                         </div>
                         <div class="col-md-6" style="padding-right: 0">
-                            <input type="password" class="form-control" placeholder="Nhập lại mật khẩu">
+                            <input  type="password" class="form-control" placeholder="Nhập lại mật khẩu" name="password2" ng-model="u.password2">
+                            <span class="error" ng-show="form.password2.$error.required">Không được trống trường này</span>
                         </div>
                     </div>
 
@@ -44,7 +48,7 @@
                     </div>
 
                     <div class="row"  style="margin-top: 10px">
-                        <button class="form-control btn btn-success">
+                        <button class="form-control btn btn-success" ng-click="register()">
                             Đăng ký
                         </button>
                     </div>
