@@ -21,9 +21,9 @@ app.service('authService',['$http',function ($http,$cookies) {
             password: password,
             email: email
         }
-        var headers = {'X-CSRFToken': 'test'};
 
-        $http.post('http://127.0.0.1:8000/register/',data=data, headers = headers)
+
+        $http.post('http://127.0.0.1:8000/register/',data=data)
             .success(function (res) {
                 console.log(res);
             })
