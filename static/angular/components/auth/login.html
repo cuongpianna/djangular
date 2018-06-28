@@ -1,19 +1,29 @@
 <div class="container-fluid" style="background-color: #f5f5f5; height: 100vh">
+            <!-- Display login status -->
+            <div id="status"></div>
+
+            <!-- Facebook login or logout button -->
+
+            <!-- Display user profile data -->
+            <div id="userData"></div>
+
             <div class="row">
                 <h1 class="col-md-4 col-md-offset-4">Login</h1>
             </div>
 
             <form class="row" name="form">
                 <div class="col-md-4 col-md-offset-4" style="margin-bottom: 25px">
-                    <input type="text" class="form-control" placeholder="Tài khoản" ng-model="user.username">
-                    <input type="password" class="form-control" placeholder="Mật khẩu" ng-model="user.password">
+                    <input type="text" class="form-control" placeholder="Tài khoản" ng-model="user.username" name="username" required>
+                    <span ng-show="!form.username.$valid" class="error">Không được để trống trường này</span>
+                    <input type="password" class="form-control" placeholder="Mật khẩu" ng-model="user.password" required name="password">
+                    <span ng-show="!form.password.$valid" class="error">Không được để trống trường này</span>
                 </div>
                 <div class="col-md-4 col-md-offset-4">
-                    <button class="btn btn-success form-control" ng-click="login()">Đăng nhập ngay</button>
+                    <button class="btn btn-success form-control" ng-click="login()" ng-disabled="!form.$valid">Đăng nhập ngay</button>
                 </div>
                 <h3 class="text-center col-md-offset-4 col-md-4">hoặc</h3>
                 <div class="col-md-4 col-md-offset-4">
-                    <a class="btn btn-primary form-control" style="margin-bottom: 10px" href="{% url 'social:begin' 'github' %}">Đăng nhập bằng github </a>
+                    <a class="btn btn-primary form-control" href="javascript:void(0);" onclick="fbLogin()" id="fbLink">Đăng nhập bằng facebook </a>
                     <button class="btn btn-danger form-control">Đăng nhập bằng google</button>
                 </div>
 

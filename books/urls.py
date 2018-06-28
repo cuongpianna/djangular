@@ -8,5 +8,6 @@ router.register('categories',views.CategoryViewSet)
 router.register('books',views.BookViewSet)
 
 urlpatterns = [
-    path('',include(router.urls))
+    path('',include(router.urls)),
+    path('home',views.home)
 ]

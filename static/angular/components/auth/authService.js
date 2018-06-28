@@ -1,4 +1,4 @@
-app.service('authService',['$http',function ($http,$cookies) {
+app.service('authService',['$http','$q','$window','$rootScope',function ($http,$q,$window,$rootScope,$cookies) {
     this.login = function (username,password) {
         var data = {
             username : username,
@@ -32,4 +32,5 @@ app.service('authService',['$http',function ($http,$cookies) {
             })
 
     }
+
 }]);

@@ -25,12 +25,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include('users.urls')),
-    path('login',obtain_jwt_token),
+    path('login',obtain_jwt_token, name='login'),
     path('register/',csrf_exempt(views.UserRegisterView.as_view())),
     path('',views.index,name='index'),
-    #path('o/',include('oauth2_provider.urls',namespace='oauth2_provider')),
-    #path('auth/',include('rest_framework_social_oauth2.urls')),
-    path('oauth/', include('social_django.urls', namespace='social')),
+    path('auth/', include('rest_framework_social_oauth2.urls')),
     path('api/',include('books.urls')),
 ]
 

@@ -11,3 +11,6 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class BookViewSet(viewsets.ModelViewSet):
     serializer_class = BookSerializer
     queryset = Book.objects.all()
+
+def home(request):
+    return render(request,'index.html')

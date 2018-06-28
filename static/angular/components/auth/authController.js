@@ -9,4 +9,5 @@ app.controller('authController',['$scope','authService',function ($scope,authSer
     $scope.register = function () {
         authService.register($scope.u.email,$scope.u.username,$scope.u.password);
     }
+
 }]);
